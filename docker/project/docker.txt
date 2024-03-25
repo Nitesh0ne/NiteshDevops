@@ -1,0 +1,132 @@
+----------Docker Compose----------
+--> Docker compose is a tool to launch multiple docker container on single node.
+--> Docker-compose file in yaml format 
+--> use to manage multiple services file with the help of file 
+
+
+
+create docker compose file
+
+docker-compose up -d // create the container (services)
+docker-compose down  // to stop and remove the container (services)
+docker-compose stop  //  to stop only container (services)
+docker-compose kill  //  to kill only container immediately (services)
+docker-compose start // to start stop container (services)
+docker-compose pause // to pause the container (services)
+docker-compose unpause // to unpause the container (services)
+
+
+docker-compose images // list the images that is used by compose only
+
+
+docker-compose logs
+
+
+
+docker-compose scale <services> = number of container
+#e.g docker-compose scale movies=10 // create 10 container
+
+-----Docker hub--------------------
+
+docker tag esewa:v1 nitace/esewa:v1
+
+docker login 
+
+docker push nitace/esewa:v1 
+
+
+
+
+
+----------Docker Swarm -----------------------------------
+Container Orchestation Tool = Manage multiple container on multiple node.
+
+Architecture.
+Manager Node and Worker Node.
+
+
+Manager Node = 
+docker swarm init
+
+
+1.High Availability.
+
+LAB
+ setup 2 sever :
+
+1.manager Node
+2.worker node
+
+step 2 . install docker and set hostname 
+
+step 3. on Manger Node 
+	|--> docker swarm init
+	|--> copy the 
+ 
+docker node ls // list the worker node 
+
+step 4:
+ generate and copy the token on worker 
+docker swarm join --token SWMTKN-1-21pi4bw6qajg54w1upc3l611q8koo49ovxd8kgo16d2b8arvg1-3nnks05e3pe5677w3tro3wes5 192.168.33.10:2377
+
+
+now, cluster is read = group of servers [manger + worker]
+
+
+step 5: on manager node 
+docker service create --name esewa --replicas=2 --publish 81:80 nitace/esewa:v1
+
+
+
+
+docker service ls // to list all services
+docker service ps <sign up > // to list specific service 
+
+docker service inspect <signup>
+
+
+docker service scale signup=10 : to scale the service from 
+
+docker servcie rm signup : remove the service signup 
+
+
+
+
+# SELF- Healing 
+	|--> if a container delete, container recreate automatically 
+# Auto Scaling 
+
+
+
+ClUSTER LEVEL ACTIVITIES;
+
+docker swarm leave(worker) : remove the worker node 
+
+ to rejoin the cluster , we need to copy the token on worker node
+
+
+
+
+
+-----------------surya raj timilsina --------------------------------------------
+
+day 2 : Docker 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
