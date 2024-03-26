@@ -1,5 +1,0 @@
-
-variable "age" {
-    type = number
-
-}

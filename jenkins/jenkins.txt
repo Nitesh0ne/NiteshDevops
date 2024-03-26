@@ -1,0 +1,51 @@
+------------maven------------------
+it is build tool 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------Jenkins------------------------
+
+=> CI/CD tool
+
+CI = continous integration : continous  build + continous test 
+
+CD = continous Delivery, => deployment manually to prod env
+	continous Deployment => deployment automatically to prod env
+
+
+PIPELINE:
+STEP BY STEP EXECUTION OF A PARTICULAR PROCESS
+CODE ---> BUILD ---> TEST --> DEPLOY
+
+
+ENV:
+DEV : DEVELOPERS
+QA  : TESTERS
+UAT : CLIENT
+
+THE ABOVE ENVS ARE CALLED AS PRE-PROD OR NON-PROD
+
+
+
+PROD : USER
+
+jenkins is free and open-source tool and platform-independent
+built in on java-11
+update-alternatives --config java
+
+
+
