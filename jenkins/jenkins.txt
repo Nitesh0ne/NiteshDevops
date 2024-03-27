@@ -1,14 +1,27 @@
 ------------maven------------------
 it is build tool 
 
+.java 
+.class == executable file
+.jar == collection of .class files (works for backend)
+.war== it has frontend and backend code 
+
+artifacts ==> .jar & .war file are artifact
 
 
+.java (source code)
+.java --> compile --> .class --> .jar ---> package --> .war
 
 
+GOAL ; command use to achieve a task 
+MAVEN follow a lifecycle
 
-
-
-
+mvn compile  : compile a source code
+mvn test     : to test the code
+mvn package  : to create artifact (project directory)
+mvn install  : 
+mvn clean package
+mvn clean 
 
 
 
@@ -46,6 +59,47 @@ PROD : USER
 jenkins is free and open-source tool and platform-independent
 built in on java-11
 update-alternatives --config java
+
+
+
+parameter
+
+choice parameter 
+string parameter = to pass multiple string
+multi-line string = to pass multipe input on multiple line
+
+boolean parameterm =  to backup build
+file parameter 
+
+
+
+default port = 8080
+changing the port number
+/usr/lib/systemd/system/jenkins.service
+line 67 = 
+
+
+systemctl daemon-reload
+systemctl restart jenkins.service
+
+passwordless login
+
+/var/lib/jenkins/config.xml
+<useSecurity>false</useSecurity>  // do not prompt login 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
