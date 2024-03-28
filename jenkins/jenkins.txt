@@ -1,21 +1,14 @@
 ------------maven------------------
 it is build tool 
-
 .java 
 .class == executable file
 .jar == collection of .class files (works for backend)
 .war== it has frontend and backend code 
-
 artifacts ==> .jar & .war file are artifact
-
-
 .java (source code)
 .java --> compile --> .class --> .jar ---> package --> .war
-
-
 GOAL ; command use to achieve a task 
 MAVEN follow a lifecycle
-
 mvn compile  : compile a source code
 mvn test     : to test the code
 mvn package  : to create artifact (project directory)
@@ -23,72 +16,137 @@ mvn install  :
 mvn clean package
 mvn clean 
 
-
-
-
-
-
-
-
 ---------------Jenkins------------------------
-
 => CI/CD tool
-
 CI = continous integration : continous  build + continous test 
-
 CD = continous Delivery, => deployment manually to prod env
 	continous Deployment => deployment automatically to prod env
-
-
 PIPELINE:
 STEP BY STEP EXECUTION OF A PARTICULAR PROCESS
 CODE ---> BUILD ---> TEST --> DEPLOY
-
-
 ENV:
 DEV : DEVELOPERS
 QA  : TESTERS
 UAT : CLIENT
-
 THE ABOVE ENVS ARE CALLED AS PRE-PROD OR NON-PROD
-
-
-
 PROD : USER
-
 jenkins is free and open-source tool and platform-independent
 built in on java-11
 update-alternatives --config java
-
-
-
 parameter
-
 choice parameter 
 string parameter = to pass multiple string
 multi-line string = to pass multipe input on multiple line
-
 boolean parameterm =  to backup build
 file parameter 
-
-
-
 default port = 8080
 changing the port number
 /usr/lib/systemd/system/jenkins.service
 line 67 = 
-
-
 systemctl daemon-reload
 systemctl restart jenkins.service
-
 passwordless login
-
 /var/lib/jenkins/config.xml
-<useSecurity>false</useSecurity>  // do not prompt login 
+<useSecurity>false</useSecurity>  // do not prompt login
+==========================================================================
+
+CRONJOB: USED TO SCHEDULE THE THE JOB
+CRONSYNTAX : * * * * 
+each star have space between them 
+* : minutes
+* : hours
+* : date
+* : month
+* : day 
+
+for 1:48 3/27/2024
+
+* * * * * ==> build in every minute 
+poll scm = build the code if only source code is changes
 
 
 
+web hook ==> clean package 
+
+
+
+
+
+throttle build == build limit in with in time period 
+
+REMOTE TRIGGERING == > BUILD JOB FROM REMOTE 
+
+
+
+
+
+-----------JENKINS MASTER AND SLAVE--------------------------------
+
+communication between master and server == ssh 
+install agent = java 11 in worker or slave node is required
+slave can be platfrom independent 
+
+maven dependency = java-1.8.0-openjdk 
+
+
+
+------------------------------------------------------------------
+Linked Job = one job trigger another job 
+
+
+
+
+-----------------------JENKINS PIPELINE-----------------------------
+
+chkconfig jenkins on ==> jenkins automatically come on service whenever server is on  
+
+
+jenkins pipeline is based on Groovy language.
+
+1. SCRIPTED 
+2. DECLARATIVE 
+
+p --> pipeline
+A --> agent 
+S --> stages
+S --> stage 
+S --> step 
+
+
+MultiStage PipeLine
+
+CODE --> BUILD --> TEST --> CODE QUALIRY --> ARTIFACT --> DEPLOYMENT
+
+
+
+
+
+CI PIPELINE AS A CODE:
+
+
+
+
+--------------------SONARCUBE---------------------------------------------
+
+
+sonarcube port : 9000
+t2.medium
+dependecy = java -11
+supprot = 20+ Programming Language
+
+
+
+
+-------------------------------------------------------------------------
+Jenkins Variable 
+
+1. User Defined variable 
+a . local vars : we can defined insde job 
+b . global vars : we can define outside job 
+
+2. Jenkins ENV VARS:
+
+these variable are going to change as per build 
 
 
 
